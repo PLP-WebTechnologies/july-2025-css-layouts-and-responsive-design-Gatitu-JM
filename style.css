@@ -1,0 +1,145 @@
+/* style.css - Responsive Flexbox & Grid Layout Demo */
+
+:root {
+  --primary: #2d3e50;
+  --accent: #f7c948;
+  --bg: #f4f4f4;
+  --card-bg: #fff;
+  --footer-bg: #222;
+  --max-width: 1200px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.header {
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+}
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* Main layout using CSS Grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.sidebar {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem 1rem;
+}
+.content {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem 1rem;
+}
+
+/* Card container using Flexbox */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 6px;
+  flex: 1 1 200px;
+  min-width: 180px;
+  max-width: 250px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.footer {
+  background: var(--footer-bg);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+/* Responsive Design: Tablet */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .sidebar {
+    margin-bottom: 1rem;
+  }
+  .card-container {
+    gap: 1rem;
+  }
+}
+
+/* Responsive Design: Mobile */
+@media (max-width: 600px) {
+  .header {
+    padding: 1rem 0.5rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .main-grid {
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+  }
+  .sidebar, .content {
+    padding: 1rem 0.5rem;
+  }
+  .card-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  .footer {
+    padding: 1rem 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* End of style.css */
